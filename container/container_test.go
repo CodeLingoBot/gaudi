@@ -9,7 +9,7 @@ import (
 	"github.com/marmelab/gaudi/docker" // mock
 )
 
-// Hook up gocheck into the "go test" runner.
+// Test hooks up gocheck into the "go test" runner.
 func Test(t *testing.T) { TestingT(t) }
 
 type ContainerTestSuite struct{}

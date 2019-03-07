@@ -17,7 +17,7 @@ type GaudiTestSuite struct{}
 
 var _ = Suite(&GaudiTestSuite{})
 
-// Apache
+// TestStartApacheShouldStartedItCorrectly: Apache
 func (s *GaudiTestSuite) TestStartApacheShouldStartedItCorrectly(c *C) {
 	g := gaudi.Gaudi{}
 	g.Init(`
@@ -39,7 +39,7 @@ applications:
 	c.Check(resp.StatusCode, Equals, 200)
 }
 
-// Apache + php-fpm
+// TestStartPhpAndApacheShouldStartedThemCorrectly: Apache + php-fpm
 func (s *GaudiTestSuite) TestStartPhpAndApacheShouldStartedThemCorrectly(c *C) {
 	err := os.MkdirAll("/tmp/php", 0775)
 	ioutil.WriteFile("/tmp/php/ok.php", []byte("<?php echo 'ok';"), 0775)
